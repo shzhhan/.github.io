@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<body>
+<center>
+    <img src="我们相爱已经有.png" width=600/>
+</center>
+<br/>
+<div style="display: flex; justify-content: center; align-items: center;">
+        <span id="timeid1" style="font-size:35px">
+        </span>
+    <img src="天.png" width=50/>
+    <span id="timeid2" style="font-size:35px">
+        </span>
+    <img src="小时.png" width=85/>
+    <span id="timeid3" style="font-size:35px">
+        </span>
+    <img src="分钟.png" width=85/>
+    <span id="timeid4" style="font-size:35px">
+        </span>
+    <img src="秒.png" width=50/>
+</div>
+
+<script type="text/javascript">
+    function loveTime() {
+        var day0 = new Date()
+        var date = (new Date()).getDate() - (new Date(2019,8,6)).getDate()
+        var days = Math.floor(date / 1000 / 60 / 60 / 24) // 从这里开始
+        var daysmod = date - days * 24 *60 * 60 * 1000
+        var hours = Math.floor(daysmod / 1000 / 60 / 60)
+        var hoursmod = date - (days * 24 *60 * 60 * 1000) - (hours * 1000 * 60 * 60)
+        var minutes = Math.floor(hoursmod / 1000 / 60)
+        var minutesmod = date - (days * 24 *60 * 60 * 1000) - (hours * 1000 * 60 * 60) - (minutes * 1000 * 60)
+        var seconds = Math.floor(minutesmod / 1000) // 到这里结束，是将总毫秒转化成对应天数+小时数+分钟数+秒数的转换方法
+        var daysshow = document.getElementById("timdid1");
+        var ds = document.getElementById("timeid1");
+        var hs = document.getElementById("timeid2");
+        var ms = document.getElementById("timeid3");
+        var ss = document.getElementById("timeid4");
+        ds.innerHTML = date;
+        hs.innerHTML = hours;
+        ms.innerHTML = minutes;
+        ss.innerHTML = seconds;
+
+
+    }
+    // 使用定时器实现每一秒写一次时间
+    setInterval("loveTime();",1000);
+
+</script>
+</body>
+---------------------
+版权声明：本文为CSDN博主「lyx1995813」的原创文章，遵循CC 4.0 by-sa版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/lyx1995813/article/details/82052062
+</body>
+</html>
